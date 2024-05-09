@@ -1,0 +1,48 @@
+# Early planning enables you to figure out if you’re biting off more
+# than you can chew and helps you determine the structure your game
+# will follow.
+#
+# The Minimum Viable Product (MVP) is probably the most important part
+# of a short design document. It tells you what you must accomplish to
+# make the game - everything else is a bonus.
+#
+# As you gain experience - and your ambitions grow - you’ll realie
+# the benefits of a bit of planning. Don’t overdoit .A small plan s
+# better than no plan.
+
+* Short Description
+A dungeon crawler with procedurally levels, monsters of increasing
+difficulty, and turn-based movement. 
+
+* Story
+The hero's hometown is suffering from a plague of monsters. Welli$
+ng up from the deep, they seem unstoppable. Legend tells of the S$
+ecret that can be use to stem the tide. After a long night at the
+tavern, the hero promises to save the day - and set forth to the
+dungeon.
+
+* Basic Game Loops
+** Enter dungeon level.
+** Explore, revealing the map.
+** Encounter enemies whom the player fights and flees from.
+** Find power-ups and use them to strengthen the player.
+** Locate the exit to the level - go to 1.
+
+* Minimum Viable Product
+** Create a basic dungeon map.
+** Place the player and let them walk around.
+** Spawn monsters, draw them, and let the player kill them by walking into them.
+** Add health and a combat system that uses it.
+** Add healing potions.
+** Display a "game over" screen when the player dies.
+** Add the Secret to the level and let the player win by reaching it.
+
+* Stretch Features to Implement
+** Fields-of-View
+** more interesting dungeon design
+** some dungeon themes
+** multiple layers to the dungeon, with the Secret on the last one
+** varied weapons to the game
+** data-driven design for spawning enemies
+** visual effects to make combat more visceral
+** keeping score
