@@ -10,3 +10,5 @@ pub struct Render {
 // Empty component is call a tag if any field excluded.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Player;
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Enemy;
