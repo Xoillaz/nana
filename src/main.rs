@@ -64,11 +64,15 @@ impl State {
 
 impl GameState for State {
     fn tick(&mut self, ctx: &mut BTerm) {
+        self.resources.insert(ctx.key);
         ctx.set_active_console(0);
+        self.resources.insert(Point::from_tuple(ctx.mouse_pos()));
         ctx.cls();
         ctx.set_active_console(1);
         ctx.cls();
-        self.resources.insert(ctx.key);
+        ctx.set_active_console(2);
+        ctx.cls();
+
         // Codes below needs review.
         let current_state = self.resources.get::<TurnState>().unwrap().clone();
         match current_state {
@@ -94,8 +98,10 @@ fn main() -> BError {
         .with_tile_dimensions(32, 32) // The size of each character in the font file.
         .with_resource_path("resources/")
         .with_font("dungeonfont.png", 32, 32)
+        .with_font("terminal8x8.png", 8, 8)
         .with_simple_console(DISPLAY_WIDTH, DISPLAY_HEIGHT, "dungeonfont.png") // Add a console using attributes specified.
         .with_simple_console_no_bg(DISPLAY_WIDTH, DISPLAY_HEIGHT, "dungeonfont.png") // Add a second console to show transparency.
+        .with_simple_console_no_bg(DISPLAY_WIDTH * 2, DISPLAY_HEIGHT * 2, "terminal8x8.png") // Add a third console to show Heads-Up Display that bracket-lib will auto-scale.
         .build()?;
 
     main_loop(context, State::new())
