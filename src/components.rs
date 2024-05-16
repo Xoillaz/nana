@@ -1,5 +1,11 @@
 pub use crate::prelude::*;
 
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct WantsToAttack {
+    pub attacker: Entity,
+    pub victim: Entity,
+}
+
 #[derive(Clone, PartialEq)]
 pub struct Name(pub String);
 
